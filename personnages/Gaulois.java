@@ -5,7 +5,11 @@ public class Gaulois {
 	private int force ;
 	private int effetPotion = 1;
 
-		
+	public static void main(String[] args) {
+		Gaulois asterix = new Gaulois("Astérix",8);
+		System.out.println(asterix);
+	}
+	
 	public Gaulois(String nom, int force) {
 		this.nom = nom ;
 		this.force = force;
@@ -32,8 +36,6 @@ public class Gaulois {
 		System.out.println(nom + "envoie un grand coup dans la machoire de " + romain.getNom());
 		romain.recevoirCoup(force/3);
 	}
-	
-	public static void main(String[] args) {
-	 
-	}
+		
 }
+
