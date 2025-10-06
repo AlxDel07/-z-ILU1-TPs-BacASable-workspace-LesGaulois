@@ -22,14 +22,25 @@ public class Romain {
 	}
 	
 	public void recevoirCoup(int forceCoup) {
+		int forceDebut = force;
 		force -= forceCoup;
 		if(force>0) {
 			parler("Aie");
+			assert forceDebut < force;
 		} else {
 			parler ("J'abandonne...");
+			assert forceDebut < force;
 		}
 	}
 	
+	private boolean isInvariantVerified() {
+		return force >= 0;
+	}
+	
+	public static void main(String[] args) {
+		Romain minus = new Romain("Minus",6);
+		assert minus.isInvariantVerified();
+	}
 	
 }
 
