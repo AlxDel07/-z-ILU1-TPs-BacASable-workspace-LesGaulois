@@ -2,7 +2,6 @@ package personnages;
 
 public class Druide {
 	private String nom ;
-	private int force ;
 	private Chaudron chaudron;
 	
 	public Druide(String nom, int force, Chaudron chaudron) {
@@ -17,7 +16,7 @@ public class Druide {
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendreParole() + "�" + texte + "�" );
+		System.out.println(prendreParole() + """ + texte + """ );
 		
 	}
 	
@@ -27,7 +26,7 @@ public class Druide {
 	
 	public void fabriquerPotion(int quantite, int forcePotion) {
 		chaudron.remplirChaudron(quantite,forcePotion);
-		parler("J'ai concoct� " + quantite + " doses de potion magique. Elle a une force de " + forcePotion + ".");
+		parler("J'ai concocté " + quantite + " doses de potion magique. Elle a une force de " + forcePotion + ".");
 	}
 	
 	public void booster(Gaulois gaulois) {
@@ -35,14 +34,14 @@ public class Druide {
 		String nomGaulois = gaulois.getNom();
 		if(contientPotion) {
 			if(gaulois.equals(obelix)) {
-				parler("Non " + nomGaulois + " Non!...Et tu le sais tr�s bien!");
+				parler("Non " + nomGaulois + " Non!...Et tu le sais très bien!");
 			}else {
 				int forcePotion = chaudron.prendreLouche();
 				gaulois.boirePotion(forcePotion);
 				parler("Tiens " + nomGaulois + " un peu de potion magique.");
 			}
 		}else {
-			parler("D�sol�" + nomGaulois + " il n'y a plus une seule goutte de potion.");
+			parler("Désolé" + nomGaulois + " il n'y a plus une seule goutte de potion.");
 		}
 	}
 	
